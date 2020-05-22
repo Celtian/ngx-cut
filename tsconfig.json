@@ -14,7 +14,8 @@
     "lib": ["es2018", "dom"],
     "paths": {
       "ngx-cut": ["dist/ngx-cut/ngx-cut", "dist/ngx-cut"]
-    }
+    },
+    "resolveJsonModule": true
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

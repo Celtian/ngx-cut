@@ -1,5 +1,5 @@
 const isIntValue = (value: any): boolean => {
-  return !isNaN(parseFloat(value as any)) && !isNaN(Number(value)) && Number.isInteger(value);
+  return !isNaN(parseFloat(value as any)) && !isNaN(Number(value)) && Number.isInteger(Number(value));
 };
 
 /**

@@ -35,13 +35,13 @@ describe('coerceIntProperty', () => {
   });
 
   it('should coerce the string "123.456" to 123.456', () => {
-    expect(coerceIntProperty('123.456')).toBe(123.456);
-    expect(coerceIntProperty('123.456', 111)).toBe(123.456);
+    expect(coerceIntProperty('123.456')).toBe(0);
+    expect(coerceIntProperty('123.456', 111)).toBe(111);
   });
 
   it('should coerce the string "-123.456" to -123.456', () => {
-    expect(coerceIntProperty('-123.456')).toBe(-123.456);
-    expect(coerceIntProperty('-123.456', 111)).toBe(-123.456);
+    expect(coerceIntProperty('-123.456')).toBe(0);
+    expect(coerceIntProperty('-123.456', 111)).toBe(111);
   });
 
   it('should coerce an arbitrary string to 0 or default', () => {
@@ -60,13 +60,13 @@ describe('coerceIntProperty', () => {
   });
 
   it('should coerce the number 123.456 to 123.456', () => {
-    expect(coerceIntProperty(123.456)).toBe(123.456);
-    expect(coerceIntProperty(123.456, 111)).toBe(123.456);
+    expect(coerceIntProperty(123.456)).toBe(0);
+    expect(coerceIntProperty(123.456, 111)).toBe(111);
   });
 
   it('should coerce the number -123.456 to -123.456', () => {
-    expect(coerceIntProperty(-123.456)).toBe(-123.456);
-    expect(coerceIntProperty(-123.456, 111)).toBe(-123.456);
+    expect(coerceIntProperty(-123.456)).toBe(0);
+    expect(coerceIntProperty(-123.456, 111)).toBe(111);
   });
 
   it('should coerce an object to 0 or default', () => {

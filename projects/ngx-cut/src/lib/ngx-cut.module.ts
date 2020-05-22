@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { NgxCutTruncateParagraphDirective } from './ngx-cut-truncate-paragraph.directive';
 import { NgxCutTruncateTextDirective } from './ngx-cut-truncate-text.directive';
+import { NgxCutComponent } from './ngx-cut.component';
 
 @NgModule({
-  declarations: [NgxCutTruncateTextDirective, NgxCutTruncateParagraphDirective],
+  declarations: [NgxCutComponent, NgxCutTruncateTextDirective, NgxCutTruncateParagraphDirective],
   imports: [],
   exports: [NgxCutTruncateTextDirective, NgxCutTruncateParagraphDirective]
 })

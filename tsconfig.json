@@ -15,7 +15,8 @@
     "paths": {
       "ngx-cut": ["dist/ngx-cut/ngx-cut", "dist/ngx-cut"]
     },
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

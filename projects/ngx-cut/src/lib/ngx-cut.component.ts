@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'lib-ngx-cut',
+  selector: 'ngx-cut',
   template: `
     <p>
       ngx-cut works!

@@ -9,8 +9,10 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start:demo": "ng serve",
+    "start": "ng build ngx-cut --watch",
+    "build:demo": "ng build --prod",
+    "build": "ng build ngx-cut --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

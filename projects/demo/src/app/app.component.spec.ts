@@ -1,4 +1,5 @@
 import { async, TestBed } from '@angular/core/testing';
+import { NgxCutModule } from 'projects/ngx-cut/src/public-api';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
@@ -7,6 +8,9 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
+      imports: [
+        NgxCutModule
+      ]
     }).compileComponents();
   }));
 

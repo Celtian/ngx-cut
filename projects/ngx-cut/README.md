@@ -83,7 +83,7 @@ yarn add ngx-cut
   short text
 ```
 
-### Example code (returning if truncate was applied - short text)
+### Example code (returning if truncate was applied - long text)
 
 ```html
 <p ngxCutTruncateParagraph [lines]="2" (truncated)="onTruncated($event)">some very long text on two lines</p>
@@ -114,7 +114,7 @@ yarn add ngx-cut
   text on two...
 ```
 
-### Example code (lines is not needed default value vill be applied)
+### Example code (lines is not needed, default value will be applied)
 
 ```html
 <p ngxCutTruncateParagraph [innerHTML]="textLong"></p>

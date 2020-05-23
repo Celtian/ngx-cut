@@ -5,6 +5,15 @@
   border-radius: 6px;
 
   &-content {
-    padding: 16px;
+    padding: 1rem;
   }
+}
+
+.github-logo {
+  margin-right: 1rem;
+}
+
+.terminal > * {
+  padding: 0 1rem 1rem;
+  color: white;
 }

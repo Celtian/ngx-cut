@@ -38,8 +38,6 @@ yarn add ngx-cut
 
 ```html
 <p ngxCutTruncateText>some long text</p>
-
-<p ngxCutTruncateParagraph [lines]="2">some very long text on two lines</p>
 ```
 
 ### Result
@@ -47,6 +45,57 @@ yarn add ngx-cut
 ```code
   some long...
 ```
+
+### Example code
+
+```html
+<p ngxCutTruncateParagraph [lines]="2">some very long text on two lines</p>
+```
+
+### Result
+
+```code
+  some very long
+  text on two...
+```
+
+### Example code
+
+```html
+<p ngxCutTruncateParagraph [lines]="2" (truncated)="onTruncated($event)">short text</p>
+```
+
+### Result
+
+```code
+  short text
+```
+
+### Example code
+
+```html
+<p ngxCutTruncateParagraph [lines]="2" (truncated)="onTruncated($event)">some very long text on two lines</p>
+```
+
+### Result
+
+```code
+  some very long
+  text on two...
+```
+
+### Example code
+
+```html
+<p
+  ngxCutTruncateParagraph
+  [lines]="2"
+  (truncated)="onTruncated($event)"
+  [innerHTML]="'some very long text on two lines'"
+></p>
+```
+
+### Result
 
 ```code
   some very long

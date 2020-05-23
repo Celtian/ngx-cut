@@ -372,20 +372,40 @@
 
   <!-- Terminal -->
   <div class="terminal" [ngSwitch]="selection.value">
-      <pre *ngSwitchDefault>
-        {{ ngxCutTruncateTextDirective }}
-      </pre>
-      <pre *ngSwitchCase="'ngxCutTruncateParagraphDirective'">
-        {{ ngxCutTruncateParagraphDirective }}
-      </pre>
+      <div *ngSwitchDefault>
+        <code>
+          {{ ngxCutTruncateTextDirective }}
+        </code>
+      </div>
+      <div *ngSwitchCase="'ngxCutTruncateParagraphDirective'">
+        <code>
+          {{ ngxCutTruncateParagraphDirective.short }}
+        </code>
+        <hr>
+        <code>
+          {{ ngxCutTruncateParagraphDirective.long }}
+        </code>
+        <hr>
+        <code>
+          {{ ngxCutTruncateParagraphDirective.innerHtml }}
+        </code>
+      </div>
+
   </div>
 
   <!-- Result -->
   <div class="example">
     <div [ngSwitch]="selection.value" class="example-content">
-      <p *ngSwitchDefault ngxCutTruncateText>{{ text }}</p>
-
-      <p *ngSwitchCase="'ngxCutTruncateParagraphDirective'" ngxCutTruncateParagraph [lines]="2">{{ text }}</p>
+      <ng-container *ngSwitchDefault>
+        <p ngxCutTruncateText>{{ textLong }}</p>
+      </ng-container>
+      <ng-container *ngSwitchCase="'ngxCutTruncateParagraphDirective'">
+        <p ngxCutTruncateParagraph [lines]="2" (truncated)="onTruncated($event)">{{ textShort }}</p>
+        <hr>
+        <p ngxCutTruncateParagraph [lines]="2" (truncated)="onTruncated($event)">{{ textLong }}</p>
+        <hr>
+        <p ngxCutTruncateParagraph [lines]="2" (truncated)="onTruncated($event)" [innerHTML]="textLong"></p>
+      </ng-container>
     </div>
   </div>
 

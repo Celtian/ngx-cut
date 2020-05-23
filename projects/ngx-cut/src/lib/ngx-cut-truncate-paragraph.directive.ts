@@ -1,4 +1,13 @@
-import { Directive, ElementRef, Input, OnChanges, Renderer2, RendererStyleFlags2 } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnChanges,
+  Output,
+  Renderer2,
+  RendererStyleFlags2
+} from '@angular/core';
 import { coerceIntProperty } from './ngx-cut.utils';
 
 const TRUNCATE_PARAGRAPH_DEFAULT_LINES = 1;
@@ -18,10 +27,14 @@ export class NgxCutTruncateParagraphDirective implements OnChanges {
   }
   public lines = TRUNCATE_PARAGRAPH_DEFAULT_LINES;
 
+  @Output() public truncated = new EventEmitter<boolean>();
+
   constructor(private element: ElementRef, private renderer: Renderer2) {}
 
   public ngOnChanges(): void {
     const element = this.element.nativeElement;
+
+    // render
     if (this.lines < 1) {
       this.renderer.setStyle(element, 'overflow', 'hidden', RendererStyleFlags2.Important);
       this.renderer.setStyle(element, 'text-overflow', 'ellipsis', RendererStyleFlags2.Important);
@@ -32,5 +45,13 @@ export class NgxCutTruncateParagraphDirective implements OnChanges {
       this.renderer.setStyle(element, '-webkit-line-clamp', this.lines, RendererStyleFlags2.Important);
       this.renderer.setStyle(element, '-webkit-box-orient', 'vertical', RendererStyleFlags2.Important);
     }
+
+    // check truncate
+    setTimeout(() => {
+      if (this.element) {
+        const { offsetHeight, scrollHeight } = this.element.nativeElement;
+        this.truncated.emit(offsetHeight < scrollHeight);
+      }
+    }, 100);
   }
 }

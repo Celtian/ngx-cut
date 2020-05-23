@@ -1,25 +1,66 @@
 # NgxCut
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.9.
+[![npm version](https://badge.fury.io/js/ngx-cut.svg)](https://badge.fury.io/js/ngx-cut)
+[![Build & Publish](https://github.com/celtian/ngx-cut/workflows/Build%20&%20Publish/badge.svg?branch=master)](https://github.com/celtian/ngx-cut/actions)
+[![volkswagen status](https://auchenberg.github.io/volkswagen/volkswargen_ci.svg?v=1)](https://github.com/auchenberg/volkswagen)
 
-## Code scaffolding
+> Angular directives for cutting texts
 
-Run `ng generate component component-name --project ngx-cut` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-cut`.
+> ✓ _Angular 9, Ivy and SSR compatible_
 
-> Note: Don't forget to add `--project ngx-cut` or else it will be added to the default project in your `angular.json` file.
+Here's the [demo](http://celtian.github.io/ngx-cut/)
 
-## Build
+## Install
 
-Run `ng build ngx-cut` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Use yarn (or npm) to install the package
 
-## Publishing
+```terminal
+yarn add ngx-cut
+```
 
-After building your library with `ng build ngx-cut`, go to the dist folder `cd dist/ngx-cut` and run `npm publish`.
+2. Add NgxCutModule into your module `imports`
 
-## Running unit tests
+```typescript
+  import { NgxCutModule } from 'ngx-cut';
 
-Run `ng test ngx-cut` to execute the unit tests via [Karma](https://karma-runner.github.io).
+  @NgModule({
+   // ...
+   imports: [
+     // ...
+     NgxCutModule
+   ]
+  })
+```
 
-## Further help
+## Usage
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Example code
+
+```html
+<p ngxCutTruncateText>some long text</p>
+
+<p ngxCutTruncateParagraph [lines]="2">some very long text on two lines</p>
+```
+
+### Result
+
+```code
+  some long...
+```
+
+```code
+  some very long
+  text on two...
+```
+
+## Dependencies
+
+_None_
+
+## License
+
+Copyright &copy; 2020 [Dominik Hladik](https://github.com/Celtian)
+
+All contents are licensed under the [MIT license].
+
+[mit license]: LICENSE

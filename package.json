@@ -6,8 +6,9 @@
     "email": "dominik.hladik@seznam.cz",
     "url": "https://github.com/Celtian"
   },
-  "private": true,
+  "private": false,
   "license": "MIT",
+  "description": "Angular directives for cutting texts",
   "scripts": {
     "ng": "ng",
     "start:demo": "ng serve",

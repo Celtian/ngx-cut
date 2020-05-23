@@ -1,14 +1,39 @@
 {
   "name": "ngx-cut",
   "version": "0.0.6",
-  "peerDependencies": {
-    "@angular/common": "^9.1.9",
-    "@angular/core": "^9.1.9"
+  "author": {
+    "name": "Dominik Hladík",
+    "email": "dominik.hladik@seznam.cz",
+    "url": "https://github.com/Celtian"
   },
+  "private": false,
+  "license": "MIT",
+  "description": "Angular directives for cutting texts",
   "dependencies": {
     "tslib": "^1.10.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
+  },
+  "homepage": "https://github.com/Celtian/ngx-cut",
+  "repository": {
+    "url": "git+https://github.com/Celtian/ngx-cut.git",
+    "type": "git"
+  },
+  "bugs": {
+    "url": "https://github.com/Celtian/ngx-cut/issues"
+  },
+  "keywords": [
+    "angular",
+    "ngx",
+    "truncate",
+    "cut",
+    "ngx-cut"
+  ],
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=10"
   }
 }

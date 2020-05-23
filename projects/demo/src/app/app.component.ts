@@ -10,6 +10,8 @@ interface ExampleCode {
   short: string;
   long: string;
   innerHtml: string;
+  fromConfig: string;
+  disabled: string;
 }
 
 @Component({
@@ -28,8 +30,9 @@ export class AppComponent {
   public ngxCutTruncateParagraphDirective: ExampleCode = {
     short: '<p ngxCutTruncateParagraph [lines]="2" (truncated)="onTruncated($event)">{{ textShort }}</p>',
     long: '<p ngxCutTruncateParagraph [lines]="2" (truncated)="onTruncated($event)">{{ textLong }}</p>',
-    innerHtml:
-      '<p ngxCutTruncateParagraph [lines]="2" (truncated)="onTruncated($event)" [innerHTML]="sanitizedTextLong"></p>'
+    innerHtml: '<p ngxCutTruncateParagraph [lines]="2" [innerHTML]="sanitizedTextLong"></p>',
+    fromConfig: '<p ngxCutTruncateParagraph [innerHTML]="sanitizedTextLong"></p>',
+    disabled: '<p ngxCutTruncateParagraph [innerHTML]="textLong" [truncateDisabled]="true"></p>'
   };
 
   public onTruncated(event: boolean): void {

@@ -5,7 +5,12 @@ import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, NgxCutModule],
+  imports: [
+    BrowserModule,
+    NgxCutModule.forRoot({
+      lines: 4
+    })
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

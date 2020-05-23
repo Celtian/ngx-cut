@@ -1,52 +1,52 @@
-import {
-  Directive,
-  ElementRef,
-  EventEmitter,
-  Input,
-  OnChanges,
-  Output,
-  Renderer2,
-  RendererStyleFlags2
-} from '@angular/core';
+import { Directive, ElementRef, EventEmitter, Input, OnInit, Output, Renderer2 } from '@angular/core';
+import { NgxCutOptionsService } from './ngx-cut-options.service';
+import { NgxCutService } from './ngx-cut.service';
 import { coerceIntProperty } from './ngx-cut.utils';
-
-const TRUNCATE_PARAGRAPH_DEFAULT_LINES = 1;
 
 @Directive({
   selector: '[ngxCutTruncateParagraph]'
 })
-export class NgxCutTruncateParagraphDirective implements OnChanges {
+export class NgxCutTruncateParagraphDirective implements OnInit {
   @Input('lines') public set setLines(value: number) {
     const v = coerceIntProperty(value);
     if (v > 0) {
       this.lines = v;
     } else {
-      console.error('Invalid input. "Lines" must be integer higher than zero. Default value will be set');
-      this.lines = TRUNCATE_PARAGRAPH_DEFAULT_LINES;
+      this.lines = this.options.lines;
     }
+    this.truncate();
+    this.detectChanges();
   }
-  public lines = TRUNCATE_PARAGRAPH_DEFAULT_LINES;
+  public lines = this.options.lines;
+
+  @Input('truncateDisabled') public set setTruncate(value: boolean) {
+    this.truncateDisabled = value;
+    this.truncate();
+    this.detectChanges();
+  }
+  public truncateDisabled = false;
 
   @Output() public truncated = new EventEmitter<boolean>();
 
-  constructor(private element: ElementRef, private renderer: Renderer2) {}
+  constructor(
+    private element: ElementRef,
+    private renderer: Renderer2,
+    private options: NgxCutOptionsService,
+    private service: NgxCutService
+  ) {}
 
-  public ngOnChanges(): void {
-    const element = this.element.nativeElement;
+  public ngOnInit(): void {
+    this.truncate();
+    this.detectChanges();
+  }
 
-    // render
-    if (this.lines < 1) {
-      this.renderer.setStyle(element, 'overflow', 'hidden', RendererStyleFlags2.Important);
-      this.renderer.setStyle(element, 'text-overflow', 'ellipsis', RendererStyleFlags2.Important);
-      this.renderer.setStyle(element, 'white-space', 'nowrap', RendererStyleFlags2.Important);
-    } else {
-      this.renderer.setStyle(element, 'overflow', 'hidden', RendererStyleFlags2.Important);
-      this.renderer.setStyle(element, 'display', '-webkit-box', RendererStyleFlags2.Important);
-      this.renderer.setStyle(element, '-webkit-line-clamp', this.lines, RendererStyleFlags2.Important);
-      this.renderer.setStyle(element, '-webkit-box-orient', 'vertical', RendererStyleFlags2.Important);
+  private truncate(): void {
+    if (this.element) {
+      this.service.setStyle(this.element, this.renderer, this.truncateDisabled ? 0 : this.lines);
     }
+  }
 
-    // check truncate
+  private detectChanges(): void {
     setTimeout(() => {
       if (this.element) {
         const { offsetHeight, scrollHeight } = this.element.nativeElement;

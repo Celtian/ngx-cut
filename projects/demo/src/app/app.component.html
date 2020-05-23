@@ -389,6 +389,14 @@
         <code>
           {{ ngxCutTruncateParagraphDirective.innerHtml }}
         </code>
+        <hr>
+        <code>
+          {{ ngxCutTruncateParagraphDirective.fromConfig }}
+        </code>
+        <hr>
+        <code>
+          {{ ngxCutTruncateParagraphDirective.disabled }}
+        </code>
       </div>
 
   </div>
@@ -404,7 +412,11 @@
         <hr>
         <p ngxCutTruncateParagraph [lines]="2" (truncated)="onTruncated($event)">{{ textLong }}</p>
         <hr>
-        <p ngxCutTruncateParagraph [lines]="2" (truncated)="onTruncated($event)" [innerHTML]="textLong"></p>
+        <p ngxCutTruncateParagraph [lines]="2" [innerHTML]="textLong"></p>
+        <hr>
+        <p ngxCutTruncateParagraph [innerHTML]="textLong"></p>
+        <hr>
+        <p ngxCutTruncateParagraph [innerHTML]="textLong" [truncateDisabled]="true"></p>
       </ng-container>
     </div>
   </div>

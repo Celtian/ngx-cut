@@ -27,6 +27,18 @@ yarn add ngx-cut
    // ...
    imports: [
      // ...
+     NgxCutModule.forRoot({
+       lines: 4 // you can setup default value globally
+     })
+   ]
+  })
+
+  // or
+
+  @NgModule({
+   // ...
+   imports: [
+     // ...
      NgxCutModule
    ]
   })
@@ -34,7 +46,7 @@ yarn add ngx-cut
 
 ## Usage
 
-### Example code
+### Example code (singleline truncate)
 
 ```html
 <p ngxCutTruncateText>some long text</p>
@@ -46,7 +58,7 @@ yarn add ngx-cut
   some long...
 ```
 
-### Example code
+### Example code (multiline truncate)
 
 ```html
 <p ngxCutTruncateParagraph [lines]="2">some very long text on two lines</p>
@@ -59,7 +71,7 @@ yarn add ngx-cut
   text on two...
 ```
 
-### Example code
+### Example code (returning if truncate was applied - short text)
 
 ```html
 <p ngxCutTruncateParagraph [lines]="2" (truncated)="onTruncated($event)">short text</p>
@@ -71,7 +83,7 @@ yarn add ngx-cut
   short text
 ```
 
-### Example code
+### Example code (returning if truncate was applied - short text)
 
 ```html
 <p ngxCutTruncateParagraph [lines]="2" (truncated)="onTruncated($event)">some very long text on two lines</p>
@@ -84,7 +96,7 @@ yarn add ngx-cut
   text on two...
 ```
 
-### Example code
+### Example code (input as html)
 
 ```html
 <p
@@ -100,6 +112,32 @@ yarn add ngx-cut
 ```code
   some very long
   text on two...
+```
+
+### Example code (lines is not needed default value vill be applied)
+
+```html
+<p ngxCutTruncateParagraph [innerHTML]="textLong"></p>
+```
+
+### Result
+
+```code
+  some very long
+  text on two...
+```
+
+### Example code (you can disable truncate)
+
+```html
+<p ngxCutTruncateParagraph [innerHTML]="textLong" [truncateDisabled]="true"></p>
+```
+
+### Result
+
+```code
+  some very long
+  text on two lines
 ```
 
 ## Dependencies

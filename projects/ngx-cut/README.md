@@ -6,7 +6,7 @@
 
 > Angular directives for cutting texts
 
-> ✓ _Angular 9, Ivy and SSR compatible_
+> ✓ _Angular 10, Ivy and SSR compatible_
 
 Here's the [demo](http://celtian.github.io/ngx-cut/)
 
@@ -28,7 +28,7 @@ yarn add ngx-cut
    imports: [
      // ...
      NgxCutModule.forRoot({
-       lines: 4 // you can setup default value globally
+       lines: 4 // overwrite default value of truncated lines
      })
    ]
   })
@@ -61,7 +61,9 @@ yarn add ngx-cut
 ### Example code (multiline truncate)
 
 ```html
-<p ngxCutTruncateParagraph [lines]="2">some very long text on two lines</p>
+<p ngxCutTruncateParagraph [lines]="2">
+  some very long text on two lines
+</p>
 ```
 
 ### Result
@@ -74,7 +76,9 @@ yarn add ngx-cut
 ### Example code (returning if truncate was applied - short text)
 
 ```html
-<p ngxCutTruncateParagraph [lines]="2" (truncated)="onTruncated($event)">short text</p>
+<p ngxCutTruncateParagraph [lines]="2" (truncated)="onTruncated($event)">
+  short text
+</p>
 ```
 
 ### Result
@@ -86,7 +90,9 @@ yarn add ngx-cut
 ### Example code (returning if truncate was applied - long text)
 
 ```html
-<p ngxCutTruncateParagraph [lines]="2" (truncated)="onTruncated($event)">some very long text on two lines</p>
+<p ngxCutTruncateParagraph [lines]="2" (truncated)="onTruncated($event)">
+  some very long text on two lines
+</p>
 ```
 
 ### Result
@@ -102,8 +108,8 @@ yarn add ngx-cut
 <p
   ngxCutTruncateParagraph
   [lines]="2"
-  (truncated)="onTruncated($event)"
   [innerHTML]="'some very long text on two lines'"
+  (truncated)="onTruncated($event)"
 ></p>
 ```
 
@@ -139,6 +145,26 @@ yarn add ngx-cut
   some very long
   text on two lines
 ```
+
+## Options
+
+### Root options
+
+| Option    | Type   | Default | Description               |
+| --------- | ------ | ------- | ------------------------- |
+| **lines** | number | 2       | Number of truncated lines |
+
+### Directive ngxCutTruncateParagraph (paragraph truncate)
+
+| Option                 | Type          | Default                            | Description                                               |
+| ---------------------- | ------------- | ---------------------------------- | --------------------------------------------------------- |
+| **[lines]**            | number        | 2 or value taken from root options | Number of truncated lines                                 |
+| **[truncateDisabled]** | boolean       | false                              | Whether truncation is active or not                       |
+| **(truncated)**        | () => boolean | none                               | Action called when truncation is activated or deactivated |
+
+### Directive ngxCutTruncateText (single line truncate)
+
+_None_
 
 ## Dependencies
 

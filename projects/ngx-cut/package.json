@@ -10,7 +10,7 @@
   "license": "MIT",
   "description": "Angular directives for cutting texts",
   "dependencies": {
-    "tslib": "^1.10.0"
+    "tslib": "^2.0.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"

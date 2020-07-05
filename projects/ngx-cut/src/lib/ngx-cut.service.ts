@@ -7,7 +7,7 @@ import { NgxCutStyleService } from './ngx-cut-style.service';
   providedIn: 'root'
 })
 export class NgxCutService {
-  constructor(@Inject(DOCUMENT) private document: Document, private styleService: NgxCutStyleService) {
+  constructor(@Inject(DOCUMENT) private document: any, private styleService: NgxCutStyleService) {
     this.styleService.createStyleSheet();
   }
 

@@ -8,7 +8,7 @@ import { extractStyleSheetData } from './ngx-cut.utils';
   providedIn: 'root'
 })
 export class NgxCutStyleService {
-  constructor(@Inject(DOCUMENT) private document: Document, private options: NgxCutOptionsService) {}
+  constructor(@Inject(DOCUMENT) private document: any, private options: NgxCutOptionsService) {}
 
   private createCss(key: string, data: NgxCutStylesBreakpointData): string {
     const sheet: string[] = [];

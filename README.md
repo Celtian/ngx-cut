@@ -1,4 +1,7 @@
-# NgxCut
+<p align="center">
+  <img src="assets/logo.svg?sanitize=true" alt="" width="120">
+  <h1 align="center">NgxCut</h1>
+</p>
 
 [![npm version](https://badge.fury.io/js/ngx-cut.svg)](https://badge.fury.io/js/ngx-cut)
 [![Build & Publish](https://github.com/celtian/ngx-cut/workflows/Build%20&%20Publish/badge.svg)](https://github.com/celtian/ngx-cut/actions)
@@ -9,6 +12,11 @@
 > ✓ _Angular 10, Ivy and SSR compatible_
 
 Here's the [demo](http://celtian.github.io/ngx-cut/)
+
+- Lightweight
+- No dependencies!
+- Directive way
+- Highly customizable [options](#options)...
 
 ## Install
 
@@ -28,7 +36,15 @@ yarn add ngx-cut
    imports: [
      // ...
      NgxCutModule.forRoot({
-       lines: 4 // overwrite default value of truncated lines
+       size: 1, // default value of truncated lines
+       breakpoints: { sm: 300, md: 400, lg: 500, xl: 600 }, // predefined or breakpoints
+       responsiveSizes: { // how many lines should be truncated in responsive mode
+         xs: { xs: 1, sm: 2, md: 3, lg: 4, xl: 5 },
+         sm: { xs: 2, sm: 3, md: 4, lg: 5, xl: 6 },
+         md: { xs: 3, sm: 4, md: 5, lg: 6, xl: 7 },
+         lg: { xs: 4, sm: 5, md: 6, lg: 7, xl: 8 },
+         xl: { xs: 5, sm: 6, md: 7, lg: 8, xl: 9 }
+       }
      })
    ]
   })
@@ -44,12 +60,12 @@ yarn add ngx-cut
   })
 ```
 
-## Usage
+## Quick start
 
-### Example code (singleline truncate)
+### Example code
 
 ```html
-<p ngxCutTruncateText>some long text</p>
+<p ngxCut>some long text</p>
 ```
 
 ### Result
@@ -58,113 +74,23 @@ yarn add ngx-cut
   some long...
 ```
 
-### Example code (multiline truncate)
-
-```html
-<p ngxCutTruncateParagraph [lines]="2">
-  some very long text on two lines
-</p>
-```
-
-### Result
-
-```code
-  some very long
-  text on two...
-```
-
-### Example code (returning if truncate was applied - short text)
-
-```html
-<p ngxCutTruncateParagraph [lines]="2" (truncated)="onTruncated($event)">
-  short text
-</p>
-```
-
-### Result
-
-```code
-  short text
-```
-
-### Example code (returning if truncate was applied - long text)
-
-```html
-<p ngxCutTruncateParagraph [lines]="2" (truncated)="onTruncated($event)">
-  some very long text on two lines
-</p>
-```
-
-### Result
-
-```code
-  some very long
-  text on two...
-```
-
-### Example code (input as html)
-
-```html
-<p
-  ngxCutTruncateParagraph
-  [lines]="2"
-  [innerHTML]="'some very long text on two lines'"
-  (truncated)="onTruncated($event)"
-></p>
-```
-
-### Result
-
-```code
-  some very long
-  text on two...
-```
-
-### Example code (lines is not needed, default value will be applied)
-
-```html
-<p ngxCutTruncateParagraph [innerHTML]="textLong"></p>
-```
-
-### Result
-
-```code
-  some very long
-  text on two...
-```
-
-### Example code (you can disable truncate)
-
-```html
-<p ngxCutTruncateParagraph [innerHTML]="textLong" [truncateDisabled]="true"></p>
-```
-
-### Result
-
-```code
-  some very long
-  text on two lines
-```
-
 ## Options
 
 ### Root options
 
-| Option    | Type   | Default | Description               |
-| --------- | ------ | ------- | ------------------------- |
-| **lines** | number | 2       | Number of truncated lines |
+| Option              | Type                                     | Default                  | Description                                            |
+| ------------------- | ---------------------------------------- | ------------------------ | ------------------------------------------------------ |
+| **size**            | NgxCutSizes                              | 1                        | Number of truncated lines                              |
+| **breakpoints**     | NgxCutBreakpointsOrPredefinedBreakpoints | DEFAULT_BREAKPOINTS      | Breakpoints used in responsive mode                    |
+| **responsiveSizes** | NgxCutResponsiveSizes                    | DEFAULT_RESPONSIVE_SIZES | How many lines should be truncated for each breakpoint |
 
 ### Directive ngxCutTruncateParagraph (paragraph truncate)
 
-| Option                 | Type          | Default                            | Description                                               |
-| ---------------------- | ------------- | ---------------------------------- | --------------------------------------------------------- |
-| **[lines]**            | number        | 2 or value taken from root options | Number of truncated lines                                 |
-| **[truncateDisabled]** | boolean       | false                              | Whether truncation is active or not                       |
-| **(truncated)**        | () => boolean | none                               | Action called when truncation is activated or deactivated |
-
-### Directive ngxCutTruncateText (single line truncate)
-
-_None_
+| Option                 | Type                      | Default                       | Description                                  |
+| ---------------------- | ------------------------- | ----------------------------- | -------------------------------------------- |
+| **[size]**             | NgxCutSizes               | value taken from root options | Number of truncated lines or responsive mode |
+| **[truncateDisabled]** | boolean                   | false                         | Whether truncation is active or not          |
+| **(truncateChange)**   | () => NgxCutEventTruncate | none                          | Event called when truncation is changed.     |
 
 ## Dependencies
 

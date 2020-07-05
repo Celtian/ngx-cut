@@ -1,21 +1,18 @@
 import { InjectionToken, ModuleWithProviders, NgModule } from '@angular/core';
 import { ngxCutOptionsFactory } from './ngx-cut-options-factory';
+import { NgxCutOptions } from './ngx-cut-options.interface';
 import { NgxCutOptionsService } from './ngx-cut-options.service';
-import { NgxCutTruncateParagraphDirective } from './ngx-cut-truncate-paragraph.directive';
-import { NgxCutTruncateTextDirective } from './ngx-cut-truncate-text.directive';
+import { NgxCutStyleService } from './ngx-cut-style.service';
+import { NgxCutDirective } from './ngx-cut.directive';
 import { NgxCutService } from './ngx-cut.service';
-
-export interface NgxCutOptions {
-  lines?: number;
-}
 
 export let FOR_ROOT_OPTIONS_TOKEN = new InjectionToken<NgxCutOptions>('forRoot() NgxCutOptionsService configuration.');
 
 @NgModule({
-  declarations: [NgxCutTruncateTextDirective, NgxCutTruncateParagraphDirective],
+  declarations: [NgxCutDirective],
   imports: [],
-  exports: [NgxCutTruncateTextDirective, NgxCutTruncateParagraphDirective],
-  providers: [NgxCutService, NgxCutOptionsService]
+  exports: [NgxCutDirective],
+  providers: [NgxCutService, NgxCutOptionsService, NgxCutStyleService]
 })
 export class NgxCutModule {
   public static forRoot(options?: NgxCutOptions): ModuleWithProviders<NgxCutModule> {

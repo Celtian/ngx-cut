@@ -1,11 +1,17 @@
-import { ElementRef, Injectable, Renderer2, RendererStyleFlags2 } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { ElementRef, Inject, Injectable, Renderer2, RendererStyleFlags2 } from '@angular/core';
+import { NgxCutSizesOnlyResponsive } from './ngx-cut-options.interface';
+import { NgxCutStyleService } from './ngx-cut-style.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NgxCutService {
+  constructor(@Inject(DOCUMENT) private document: Document, private styleService: NgxCutStyleService) {
+    this.styleService.createStyleSheet();
+  }
+
   public setStyle(element: ElementRef, renderer: Renderer2, lines: number): void {
-    const el = element.nativeElement;
     switch (lines) {
       case 0:
         this.resetStyle(element, renderer);
@@ -42,5 +48,24 @@ export class NgxCutService {
     renderer.removeStyle(el, 'display', RendererStyleFlags2.Important);
     renderer.removeStyle(el, '-webkit-line-clamp', RendererStyleFlags2.Important);
     renderer.removeStyle(el, '-webkit-box-orient', RendererStyleFlags2.Important);
+  }
+
+  public setClass(element: ElementRef, renderer: Renderer2, size?: NgxCutSizesOnlyResponsive): void {
+    const el = element.nativeElement;
+    if (size) {
+      this.resetClass(element, renderer);
+      renderer.addClass(el, `ngx-cut-${size}`);
+    } else {
+      this.resetClass(element, renderer);
+    }
+  }
+
+  private resetClass(element: ElementRef, renderer: Renderer2): void {
+    const el = element.nativeElement;
+    renderer.removeClass(el, 'ngx-cut-xs');
+    renderer.removeClass(el, 'ngx-cut-sm');
+    renderer.removeClass(el, 'ngx-cut-md');
+    renderer.removeClass(el, 'ngx-cut-lg');
+    renderer.removeClass(el, 'ngx-cut-xl');
   }
 }

@@ -1,7 +1,7 @@
 import { ElementRef, Renderer2 } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { NgxCutOptionsService } from './ngx-cut-options.service';
-import { NgxCutTruncateParagraphDirective } from './ngx-cut-truncate-paragraph.directive';
+import { NgxCutDirective } from './ngx-cut.directive';
 import { NgxCutService } from './ngx-cut.service';
 
 describe('NgxCutTruncateParagraphDirective', () => {
@@ -11,7 +11,7 @@ describe('NgxCutTruncateParagraphDirective', () => {
   const service: jasmine.SpyObj<NgxCutService> = null;
 
   beforeEach(() => {
-    optionsServiceSpy = jasmine.createSpyObj('NgxCutOptionsService', ['lines']);
+    optionsServiceSpy = jasmine.createSpyObj('NgxCutOptionsService', ['size']);
 
     TestBed.configureTestingModule({
       providers: [ElementRef, Renderer2, NgxCutService,
@@ -21,7 +21,7 @@ describe('NgxCutTruncateParagraphDirective', () => {
   });
 
   it('should create an instance', () => {
-    const directive = new NgxCutTruncateParagraphDirective(element, renderer, optionsServiceSpy, service);
+    const directive = new NgxCutDirective(element, renderer, optionsServiceSpy, service);
     expect(directive).toBeTruthy();
   });
 });

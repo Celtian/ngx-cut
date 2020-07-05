@@ -25,10 +25,17 @@
   },
   "keywords": [
     "angular",
-    "ngx",
-    "truncate",
+    "clamp",
     "cut",
-    "ngx-cut"
+    "ellipsis",
+    "ngx-cut",
+    "ngx",
+    "responsive",
+    "shorten",
+    "trim",
+    "truncate",
+    "truncated",
+    "truncation"
   ],
   "files": [
     "dist"

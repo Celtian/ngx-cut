@@ -17,6 +17,8 @@ Here's the [demo](http://celtian.github.io/ngx-cut/)
 - No dependencies!
 - Directive way
 - Highly customizable [options](#options)...
+- Responsivity supported
+- Predefined breakpoints (Bootrstrap, CDK, FxLayout)
 
 ## Install
 
@@ -36,9 +38,29 @@ yarn add ngx-cut
    imports: [
      // ...
      NgxCutModule.forRoot({
-       size: 1, // default value of truncated lines
-       breakpoints: { sm: 300, md: 400, lg: 500, xl: 600 }, // predefined or breakpoints
-       responsiveSizes: { // how many lines should be truncated in responsive mode
+       size: 1, // directive without [size] uses this value
+       breakpoints: { sm: 300, md: 400, lg: 500, xl: 600 }, // custom breakpoints
+       responsiveSizes: { // lines be truncated in responsive mode
+         xs: { xs: 1, sm: 2, md: 3, lg: 4, xl: 5 },
+         sm: { xs: 2, sm: 3, md: 4, lg: 5, xl: 6 },
+         md: { xs: 3, sm: 4, md: 5, lg: 6, xl: 7 },
+         lg: { xs: 4, sm: 5, md: 6, lg: 7, xl: 8 },
+         xl: { xs: 5, sm: 6, md: 7, lg: 8, xl: 9 }
+       }
+     })
+   ]
+  })
+
+  // or
+
+  @NgModule({
+   // ...
+   imports: [
+     // ...
+     NgxCutModule.forRoot({
+       size: 'sm', // directive without [size] uses responsiveSizes.sm
+       breakpoints: 'BOOTSTRAP', // predefined breakpoint ('BOOTSTRAP', 'FX_LAYOUT' or 'CDK')
+       responsiveSizes: { // lines be truncated in responsive mode
          xs: { xs: 1, sm: 2, md: 3, lg: 4, xl: 5 },
          sm: { xs: 2, sm: 3, md: 4, lg: 5, xl: 6 },
          md: { xs: 3, sm: 4, md: 5, lg: 6, xl: 7 },
@@ -84,7 +106,7 @@ yarn add ngx-cut
 | **breakpoints**     | NgxCutBreakpointsOrPredefinedBreakpoints | DEFAULT_BREAKPOINTS      | Breakpoints used in responsive mode                    |
 | **responsiveSizes** | NgxCutResponsiveSizes                    | DEFAULT_RESPONSIVE_SIZES | How many lines should be truncated for each breakpoint |
 
-### Directive ngxCutTruncateParagraph (paragraph truncate)
+### Directive
 
 | Option                 | Type                      | Default                       | Description                                  |
 | ---------------------- | ------------------------- | ----------------------------- | -------------------------------------------- |

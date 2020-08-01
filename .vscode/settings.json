@@ -1,6 +1,6 @@
 {
   "workbench.colorCustomizations": {
-    "statusBar.background": "#1976d2",
+    "statusBar.background": "#d21919",
     "statusBar.foreground": "#ffffff"
   },
   "editor.codeActionsOnSave": {
@@ -12,5 +12,6 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "files.eol": "\r\n",
   "files.encoding": "utf8",
-  "prettier.endOfLine": "lf"
+  "prettier.endOfLine": "lf",
+  "javascript.implicitProjectConfig.experimentalDecorators": true
 }

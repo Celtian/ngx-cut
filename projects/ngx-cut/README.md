@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.svg?sanitize=true" alt="" width="120">
+  <a href="https://github.com/Celtian/ngx-cut" target="blank"><img src="assets/logo.svg?sanitize=true" alt="" width="120"></a>
   <h1 align="center">NgxCut</h1>
 </p>
 
@@ -7,7 +7,7 @@
 [![Build & Publish](https://github.com/celtian/ngx-cut/workflows/Build%20&%20Publish/badge.svg)](https://github.com/celtian/ngx-cut/actions)
 [![volkswagen status](https://auchenberg.github.io/volkswagen/volkswargen_ci.svg?v=1)](https://github.com/auchenberg/volkswagen)
 
-> Angular directives for cutting texts
+> Angular directive for cutting texts with responsive options
 
 > ✓ _Angular 10, Ivy and SSR compatible_
 

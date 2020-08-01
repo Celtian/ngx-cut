@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.svg?sanitize=true" alt="" width="120">
+  <a href="https://github.com/Celtian/ngx-cut" target="blank"><img src="assets/logo.svg?sanitize=true" alt="" width="120"></a>
   <h1 align="center">NgxCut</h1>
 </p>
 

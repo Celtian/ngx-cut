@@ -4,9 +4,7 @@ import { NgxCutStylesBreakpointData } from './ngx-cut-options.interface';
 import { NgxCutOptionsService } from './ngx-cut-options.service';
 import { extractStyleSheetData } from './ngx-cut.utils';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class NgxCutStyleService {
   constructor(@Inject(DOCUMENT) private document: any, private options: NgxCutOptionsService) {}
 

@@ -100,19 +100,19 @@ yarn add ngx-cut
 
 ### Root options
 
-| Option              | Type                                     | Default                  | Description                                            |
-| ------------------- | ---------------------------------------- | ------------------------ | ------------------------------------------------------ |
-| **size**            | NgxCutSizes                              | 1                        | Number of truncated lines                              |
-| **breakpoints**     | NgxCutBreakpointsOrPredefinedBreakpoints | DEFAULT_BREAKPOINTS      | Breakpoints used in responsive mode                    |
-| **responsiveSizes** | NgxCutResponsiveSizes                    | DEFAULT_RESPONSIVE_SIZES | How many lines should be truncated for each breakpoint |
+| Option              | Type             | Default                  | Description                                            |
+| ------------------- | ---------------- | ------------------------ | ------------------------------------------------------ |
+| **size**            | string or number | 1                        | Number of truncated lines                              |
+| **breakpoints**     | object           | DEFAULT_BREAKPOINTS      | Breakpoints used in responsive mode                    |
+| **responsiveSizes** | object           | DEFAULT_RESPONSIVE_SIZES | How many lines should be truncated for each breakpoint |
 
 ### Directive
 
-| Option                 | Type                      | Default                       | Description                                  |
-| ---------------------- | ------------------------- | ----------------------------- | -------------------------------------------- |
-| **[size]**             | NgxCutSizes               | value taken from root options | Number of truncated lines or responsive mode |
-| **[truncateDisabled]** | boolean                   | false                         | Whether truncation is active or not          |
-| **(truncateChange)**   | () => NgxCutEventTruncate | none                          | Event called when truncation is changed.     |
+| Option                 | Type         | Default                       | Description                                  |
+| ---------------------- | ------------ | ----------------------------- | -------------------------------------------- |
+| **[size]**             | object       | value taken from root options | Number of truncated lines or responsive mode |
+| **[truncateDisabled]** | boolean      | false                         | Whether truncation is active or not          |
+| **(truncateChange)**   | () => object | none                          | Event called when truncation is changed.     |
 
 ## Dependencies
 

@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import { NgxCutBreakpoints, NgxCutResponsiveSizes, NgxCutSizes } from './ngx-cut-options.interface';
 import { DEFAULT_BREAKPOINTS, DEFAULT_RESPONSIVE_SIZES } from './ngx-cut.constants';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class NgxCutOptionsService {
   /**
    * @returns breakpoints - can be custom or predefined

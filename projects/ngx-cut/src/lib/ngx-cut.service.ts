@@ -1,13 +1,10 @@
-import { DOCUMENT } from '@angular/common';
-import { ElementRef, Inject, Injectable, Renderer2, RendererStyleFlags2 } from '@angular/core';
+import { ElementRef, Injectable, Renderer2, RendererStyleFlags2 } from '@angular/core';
 import { NgxCutSizesOnlyResponsive } from './ngx-cut-options.interface';
 import { NgxCutStyleService } from './ngx-cut-style.service';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class NgxCutService {
-  constructor(@Inject(DOCUMENT) private document: any, private styleService: NgxCutStyleService) {
+  constructor(private styleService: NgxCutStyleService) {
     this.styleService.createStyleSheet();
   }
 

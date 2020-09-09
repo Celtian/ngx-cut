@@ -13,13 +13,15 @@
     "target": "es2015",
     "lib": ["es2018", "dom"],
     "paths": {
-      "ngx-cut": ["dist/ngx-cut/ngx-cut", "dist/ngx-cut"]
+      "ngx-cut": ["dist/ngx-cut"],
+      "ngx-cut/*": ["dist/ngx-cut/*"]
     },
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
+    "strictTemplates": true,
     "strictInjectionParameters": true
   }
 }

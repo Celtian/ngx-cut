@@ -37,9 +37,6 @@
     "truncated",
     "truncation"
   ],
-  "files": [
-    "dist"
-  ],
   "engines": {
     "node": ">=10"
   }

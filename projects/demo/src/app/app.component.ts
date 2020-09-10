@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { NgxCutEventTruncate } from 'projects/ngx-cut/src/lib/ngx-cut-options.interface';
+import { NgxCutEventTruncate } from 'projects/ngx-cut/src/lib';
 import { VERSION } from '../environments/version';
 
 const TEXT =

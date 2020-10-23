@@ -6,6 +6,7 @@
 [![npm version](https://badge.fury.io/js/ngx-cut.svg)](https://badge.fury.io/js/ngx-cut)
 [![Build & Publish](https://github.com/celtian/ngx-cut/workflows/Build%20&%20Publish/badge.svg)](https://github.com/celtian/ngx-cut/actions)
 [![volkswagen status](https://auchenberg.github.io/volkswagen/volkswargen_ci.svg?v=1)](https://github.com/auchenberg/volkswagen)
+[![Codecov Coverage](https://img.shields.io/codecov/c/github/caki0915/my-awesome-greeter/coverage.svg)](https://codecov.io/gh/celtian/ngx-cut/)
 
 > Angular directive for cutting texts with responsive options
 
@@ -38,9 +39,12 @@ yarn add ngx-cut
    imports: [
      // ...
      NgxCutModule.forRoot({
-       size: 1, // directive without [size] uses this value
-       breakpoints: { sm: 300, md: 400, lg: 500, xl: 600 }, // custom breakpoints
-       responsiveSizes: { // lines be truncated in responsive mode
+       // directive without [size] uses this value
+       size: 1,
+       // custom breakpoints
+       breakpoints: { sm: 300, md: 400, lg: 500, xl: 600 },
+       // lines be truncated in responsive mode
+       responsiveSizes: {
          xs: { xs: 1, sm: 2, md: 3, lg: 4, xl: 5 },
          sm: { xs: 2, sm: 3, md: 4, lg: 5, xl: 6 },
          md: { xs: 3, sm: 4, md: 5, lg: 6, xl: 7 },
@@ -58,9 +62,12 @@ yarn add ngx-cut
    imports: [
      // ...
      NgxCutModule.forRoot({
-       size: 'sm', // directive without [size] uses responsiveSizes.sm
-       breakpoints: 'BOOTSTRAP', // predefined breakpoint ('BOOTSTRAP', 'FX_LAYOUT' or 'CDK')
-       responsiveSizes: { // lines be truncated in responsive mode
+       // directive without [size] uses responsiveSizes.sm
+       size: 'sm',
+       // predefined breakpoint ('BOOTSTRAP', 'FX_LAYOUT' or 'CDK')
+       breakpoints: 'BOOTSTRAP',
+       // lines be truncated in responsive mode
+       responsiveSizes: {
          xs: { xs: 1, sm: 2, md: 3, lg: 4, xl: 5 },
          sm: { xs: 2, sm: 3, md: 4, lg: 5, xl: 6 },
          md: { xs: 3, sm: 4, md: 5, lg: 6, xl: 7 },

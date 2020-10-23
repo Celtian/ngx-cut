@@ -1,19 +1,73 @@
 import {
   NgxCutBreakpoints,
-
   NgxCutResponsiveSizes
 } from './ngx-cut-options.interface';
-import { BOOTSTRAP_BREAKPOINTS, CDK_BREAKPOINTS, DEFAULT_BREAKPOINTS, DEFAULT_RESPONSIVE_SIZES, FX_LAYOUT_BREAKPOINTS } from './ngx-cut.constants';
+import {
+  BOOTSTRAP_BREAKPOINTS,
+  CDK_BREAKPOINTS,
+  DEFAULT_BREAKPOINTS,
+  DEFAULT_RESPONSIVE_SIZES,
+  FX_LAYOUT_BREAKPOINTS
+} from './ngx-cut.constants';
 import {
   coerceIntProperty,
   coerceNgxCutSizes,
   extractStyleSheetData,
+  isIntValue,
   normalizeAllResponsiveSizes,
   normalizeResponsiveSize,
   selectBreakpoints
 } from './ngx-cut.utils';
 
 describe('NgxCutUtils', () => {
+
+  describe('isIntValue', () => {
+    it('should validate undefined and return false', () => {
+      expect(isIntValue(undefined)).toBe(false);
+    });
+
+    it('should validate null and return false', () => {
+      expect(isIntValue(null)).toBe(false);
+    });
+
+    it('should validate string and return false', () => {
+      expect(isIntValue('some string')).toBe(false);
+    });
+
+    it('should validate string as decimal number and return false', () => {
+      expect(isIntValue('12.11')).toBe(false);
+      expect(isIntValue('-12.11')).toBe(false);
+    });
+
+    it('should validate string as number and return false', () => {
+      expect(isIntValue('12')).toBe(true);
+      expect(isIntValue('-12')).toBe(true);
+    });
+
+    it('should validate boolean return false', () => {
+      expect(isIntValue(true)).toBe(false);
+      expect(isIntValue(false)).toBe(false);
+    });
+
+    it('should validate array return false', () => {
+      expect(isIntValue([])).toBe(false);
+    });
+
+    it('should validate object return false', () => {
+      expect(isIntValue({})).toBe(false);
+    });
+
+    it('should validate number return false', () => {
+      expect(isIntValue(10)).toBe(true);
+      expect(isIntValue(-10)).toBe(true);
+    });
+
+    it('should validate decimal number return false', () => {
+      expect(isIntValue(10.02)).toBe(false);
+      expect(isIntValue(-10.02)).toBe(false);
+    });
+  });
+
   describe('coerceIntProperty', () => {
 
     it('should coerce undefined to 0 or default', () => {

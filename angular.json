@@ -26,7 +26,8 @@
           "options": {
             "main": "projects/ngx-cut/src/test.ts",
             "tsConfig": "projects/ngx-cut/tsconfig.spec.json",
-            "karmaConfig": "projects/ngx-cut/karma.conf.js"
+            "karmaConfig": "projects/ngx-cut/karma.conf.js",
+            "codeCoverage": true
           },
           "configurations": {
             "ci": {

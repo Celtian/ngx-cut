@@ -16,7 +16,7 @@ import {
   FX_LAYOUT_BREAKPOINTS
 } from './ngx-cut.constants';
 
-const isIntValue = (value: any): boolean => {
+export const isIntValue = (value: any): boolean => {
   return !isNaN(parseFloat(value as any)) && !isNaN(Number(value)) && Number.isInteger(Number(value));
 };
 

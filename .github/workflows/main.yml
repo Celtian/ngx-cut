@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Use Node.js 12.x
-        uses: actions/setup-node@master
+        uses: actions/setup-node@v1.4.4
         with:
           node-version: 12.x
           registry-url: 'https://registry.npmjs.org'

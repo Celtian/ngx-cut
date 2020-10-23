@@ -3,12 +3,13 @@
  */
 import { copyFileSync, writeFileSync } from 'fs-extra';
 import { resolve } from 'path';
-import { version } from '../package.json';
+import { publishConfig, version } from '../package.json';
 
 const packagePath = resolve(__dirname, '..', 'projects', 'ngx-cut', 'package.json');
 const pkg = require(packagePath);
 
 pkg.version = version;
+pkg.publishConfig = publishConfig;
 
 writeFileSync(packagePath, JSON.stringify(pkg, null, 2));
 

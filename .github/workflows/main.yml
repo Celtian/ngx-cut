@@ -43,8 +43,8 @@ jobs:
       - name: Run tests
         run: yarn test --configuration=ci
 
-      - name: Send coverage test
-        run: yarn test:coverage --token=${{ secrets.ACTIONS_DEPLOY_KEY }}
+      - name: Upload coverage reports
+        run: bash <(curl -s https://codecov.io/bash)
 
       - name: Publish NPM
         run: npm publish --folder dist/ngx-cut

@@ -10,7 +10,6 @@ export let FOR_ROOT_OPTIONS_TOKEN = new InjectionToken<NgxCutOptions>('forRoot()
 
 @NgModule({
   declarations: [NgxCutDirective],
-  imports: [],
   exports: [NgxCutDirective],
   providers: [NgxCutService, NgxCutOptionsService, NgxCutStyleService]
 })

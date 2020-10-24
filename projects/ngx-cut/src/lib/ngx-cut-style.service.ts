@@ -1,6 +1,6 @@
 import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable } from '@angular/core';
-import { NgxCutStylesBreakpointData } from './ngx-cut-options.interface';
+import { NgxCutSizesOnlyResponsive, NgxCutStylesBreakpointData } from './ngx-cut-options.interface';
 import { NgxCutOptionsService } from './ngx-cut-options.service';
 import { extractStyleSheetData } from './ngx-cut.utils';
 
@@ -8,7 +8,7 @@ import { extractStyleSheetData } from './ngx-cut.utils';
 export class NgxCutStyleService {
   constructor(@Inject(DOCUMENT) private document: any, private options: NgxCutOptionsService) {}
 
-  private createCss(key: string, data: NgxCutStylesBreakpointData): string {
+  private createCss(key: NgxCutSizesOnlyResponsive, data: NgxCutStylesBreakpointData): string {
     const sheet: string[] = [];
     for (const [k, v] of Object.entries(data)) {
       if (v.breakpoint) {

@@ -41,7 +41,7 @@ jobs:
         run: yarn build
 
       - name: Run tests
-        run: yarn test --configuration=ci
+        run: yarn test --code-coverage --configuration=ci
 
       - name: Upload coverage reports
         run: bash <(curl -s https://codecov.io/bash)

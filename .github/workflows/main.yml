@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Use Node.js 12.x
-        uses: actions/setup-node@v1.4.4
+        uses: actions/setup-node@master
         with:
           node-version: 12.x
           registry-url: 'https://registry.npmjs.org'
@@ -62,6 +62,7 @@ jobs:
       - name: Publish to GitHub Package Registry
         run: |
           cd dist/ngx-cut
+          npm config set registry 'https://npm.pkg.github.com/@celtian'
           npm publish
         env:
           NODE_AUTH_TOKEN: ${{github.token}}

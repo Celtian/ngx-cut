@@ -7,7 +7,9 @@ import {
   NgxCutResponsiveSizeOrNumber,
   NgxCutResponsiveSizes,
   NgxCutSizes,
-  NgxCutStyles
+  NgxCutSizesOnlyResponsive,
+  NgxCutStyles,
+  NgxCutStylesBreakpointData
 } from './ngx-cut-options.interface';
 import {
   BOOTSTRAP_BREAKPOINTS,
@@ -167,4 +169,36 @@ export const extractStyleSheetData = (
       xl: { size: xl.xl, breakpoint: breakpoints.xl }
     }
   };
+};
+
+/**
+ *
+ * @param key used for class name
+ * @param data used for parameters
+ * @returns css stylesheet based on input data
+ */
+export const createCss = (key: NgxCutSizesOnlyResponsive, data: NgxCutStylesBreakpointData): string => {
+  const sheet: string[] = [];
+  for (const [k, v] of Object.entries(data)) {
+    if (v.breakpoint) {
+      sheet.push(`
+      @media screen and (min-width:${v.breakpoint}px) {
+        .ngx-cut-${key} {
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: ${v.size};
+          -webkit-box-orient: vertical;
+        }
+      }`);
+    } else {
+      sheet.push(`
+      .ngx-cut-${key} {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: ${v.size};
+        -webkit-box-orient: vertical;
+      }`);
+    }
+  }
+  return sheet.join('\n');
 };

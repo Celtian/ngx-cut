@@ -1,11 +1,13 @@
-import { ElementRef, Injectable, Renderer2, RendererStyleFlags2 } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { ElementRef, Inject, Injectable, Renderer2, RendererStyleFlags2 } from '@angular/core';
 import { NgxCutSizesOnlyResponsive } from './ngx-cut-options.interface';
-import { NgxCutStyleService } from './ngx-cut-style.service';
+import { NgxCutOptionsService } from './ngx-cut-options.service';
+import { createCss, extractStyleSheetData } from './ngx-cut.utils';
 
 @Injectable()
 export class NgxCutService {
-  constructor(private styleService: NgxCutStyleService) {
-    this.styleService.createStyleSheet();
+  constructor(@Inject(DOCUMENT) private document: Document, private options: NgxCutOptionsService) {
+    this.createStyleSheet();
   }
 
   public setStyle(element: ElementRef, renderer: Renderer2, lines: number): void {
@@ -64,5 +66,16 @@ export class NgxCutService {
     renderer.removeClass(el, 'ngx-cut-md');
     renderer.removeClass(el, 'ngx-cut-lg');
     renderer.removeClass(el, 'ngx-cut-xl');
+  }
+
+  private createStyleSheet(): void {
+    const style = this.document.createElement('style');
+    const data = extractStyleSheetData(this.options.breakpoints, this.options.responsiveSizes);
+    style.appendChild(this.document.createTextNode(createCss('xs', data.xs)));
+    style.appendChild(this.document.createTextNode(createCss('sm', data.sm)));
+    style.appendChild(this.document.createTextNode(createCss('md', data.md)));
+    style.appendChild(this.document.createTextNode(createCss('lg', data.lg)));
+    style.appendChild(this.document.createTextNode(createCss('xl', data.xl)));
+    this.document.head.appendChild(style);
   }
 }

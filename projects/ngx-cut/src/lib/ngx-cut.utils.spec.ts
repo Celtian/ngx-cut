@@ -1,6 +1,7 @@
 import {
   NgxCutBreakpoints,
-  NgxCutResponsiveSizes
+  NgxCutResponsiveSizes,
+  NgxCutStyles
 } from './ngx-cut-options.interface';
 import {
   BOOTSTRAP_BREAKPOINTS,
@@ -12,6 +13,7 @@ import {
 import {
   coerceIntProperty,
   coerceNgxCutSizes,
+  createCss,
   extractStyleSheetData,
   isIntValue,
   normalizeAllResponsiveSizes,
@@ -338,6 +340,36 @@ describe('NgxCutUtils', () => {
 
     it('should convert undefined & null into undefined', () => {
       expect(extractStyleSheetData(undefined, null)).toEqual(undefined);
+    });
+  });
+
+  describe('createCss', () => {
+    let data: NgxCutStyles;
+
+    beforeEach(() => {
+      const responsiveSizes: NgxCutResponsiveSizes = DEFAULT_RESPONSIVE_SIZES;
+      const breakpoints: NgxCutBreakpoints = DEFAULT_BREAKPOINTS;
+      data = extractStyleSheetData(breakpoints, responsiveSizes);
+    });
+
+    it('should return xs stylesheet', () => {
+      expect(createCss('xs', data.xs)).toContain('.ngx-cut-xs');
+    });
+
+    it('should return sm stylesheet', () => {
+      expect(createCss('sm', data.sm)).toContain('.ngx-cut-sm');
+    });
+
+    it('should return md stylesheet', () => {
+      expect(createCss('md', data.md)).toContain('.ngx-cut-md');
+    });
+
+    it('should return lg stylesheet', () => {
+      expect(createCss('lg', data.lg)).toContain('.ngx-cut-lg');
+    });
+
+    it('should return xl stylesheet', () => {
+      expect(createCss('xl', data.xl)).toContain('.ngx-cut-xl');
     });
   });
 });

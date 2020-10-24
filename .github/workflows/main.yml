@@ -62,7 +62,6 @@ jobs:
       - name: Publish to GitHub Package Registry
         run: |
           cd dist/ngx-cut
-          npm config set registry 'https://npm.pkg.github.com/@celtian'
           npm publish
         env:
           NODE_AUTH_TOKEN: ${{github.token}}

@@ -6,7 +6,8 @@ import distPackage from '../dist/ngx-cut/package.json';
 const pkg: Record<string, any> = distPackage;
 
 pkg.publishConfig = {};
-pkg.publishConfig.registry = `https://npm.pkg.github.com/@celtian`;
+pkg.name = '@celtian/ngx-cut';
+pkg.publishConfig.registry = 'https://npm.pkg.github.com';
 
 writeFileSync(join(__dirname, '..', 'dist', 'ngx-cut', 'package.json'), JSON.stringify(pkg, null, 2));
 console.log('File package.json modified:', pkg);

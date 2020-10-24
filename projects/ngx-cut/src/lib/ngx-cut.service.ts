@@ -6,7 +6,7 @@ import { createCss, extractStyleSheetData } from './ngx-cut.utils';
 
 @Injectable()
 export class NgxCutService {
-  constructor(@Inject(DOCUMENT) private document: Document, private options: NgxCutOptionsService) {
+  constructor(@Inject(DOCUMENT) private document: any, private options: NgxCutOptionsService) {
     this.createStyleSheet();
   }
 

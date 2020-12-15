@@ -10,7 +10,7 @@ describe('NgxCutService', () => {
 
   beforeEach(() => {
     element = jasmine.createSpyObj('ElementRef', ['nativeElement']);
-    renderer = jasmine.createSpyObj('Renderer2', ['setStyle', 'removeStyle']);
+    renderer = jasmine.createSpyObj('Renderer2', ['setStyle', 'removeStyle', 'removeClass', 'addClass']);
 
     TestBed.configureTestingModule({
       imports: [NgxCutModule],
@@ -39,5 +39,15 @@ describe('NgxCutService', () => {
   it('should setStyle with 2 line', () => {
     service.setStyle(element, renderer, 2);
     expect(renderer.setStyle).toHaveBeenCalled();
+  });
+
+  it('should removeClass if size argument is missing', () => {
+    service.setClass(element, renderer);
+    expect(renderer.removeClass).toHaveBeenCalled();
+  });
+
+  it('should addClass if argument size is present', () => {
+    service.setClass(element, renderer, 'xs');
+    expect(renderer.addClass).toHaveBeenCalled();
   });
 });

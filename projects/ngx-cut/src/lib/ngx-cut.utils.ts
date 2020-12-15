@@ -97,9 +97,7 @@ export const normalizeAllResponsiveSizes = (value: NgxCutOptionsResponsiveSizes)
  * @param breakpoints custom breakpoints
  */
 export const selectBreakpoints = (breakpoints: NgxCutBreakpointsOrPredefinedBreakpoints): NgxCutBreakpoints => {
-  if (!breakpoints) {
-    return DEFAULT_BREAKPOINTS;
-  } else if (typeof breakpoints === 'string') {
+  if (breakpoints && typeof breakpoints === 'string') {
     const bp = String(breakpoints) as NgxCutPredefinedBreakpoints;
     switch (bp) {
       case 'BOOTSTRAP':
@@ -108,14 +106,11 @@ export const selectBreakpoints = (breakpoints: NgxCutBreakpointsOrPredefinedBrea
         return CDK_BREAKPOINTS;
       case 'FX_LAYOUT':
         return FX_LAYOUT_BREAKPOINTS;
-      default:
-        return DEFAULT_BREAKPOINTS;
     }
-  } else if (typeof breakpoints === 'object') {
+  } else if (breakpoints && typeof breakpoints === 'object') {
     return breakpoints;
-  } else {
-    return DEFAULT_BREAKPOINTS;
   }
+  return DEFAULT_BREAKPOINTS;
 };
 
 /**

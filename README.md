@@ -11,7 +11,7 @@
 [![codecov](https://codecov.io/gh/Celtian/ngx-cut/branch/master/graph/badge.svg?token=1IRUKIKM0D)](https://codecov.io/gh/celtian/ngx-cut/)
 ![stars](https://badgen.net/github/stars/celtian/ngx-cut)
 ![forks](https://badgen.net/github/forks/celtian/ngx-cut)
-![HitCount](http://hits.dwyl.com/celtian/ngx-cut.svg)(http://hits.dwyl.com/celtian/ngx-cut)
+![HitCount](http://hits.dwyl.com/celtian/ngx-cut.svg)
 
 > Angular directive for cutting texts with responsive options
 

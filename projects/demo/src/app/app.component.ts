@@ -20,14 +20,6 @@ interface ExampleSection {
   responsive: ExampleSectionItem[];
 }
 
-interface ExampleCode {
-  short: string;
-  long: string;
-  innerHtml: string;
-  fromConfig: string;
-  disabled: string;
-}
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

@@ -9,8 +9,8 @@
 [![Build & Publish](https://github.com/celtian/ngx-cut/workflows/Build%20&%20Publish/badge.svg)](https://github.com/celtian/ngx-cut/actions)
 [![volkswagen status](https://auchenberg.github.io/volkswagen/volkswargen_ci.svg?v=1)](https://github.com/auchenberg/volkswagen)
 [![codecov](https://codecov.io/gh/Celtian/ngx-cut/branch/master/graph/badge.svg?token=1IRUKIKM0D)](https://codecov.io/gh/celtian/ngx-cut/)
-![stars](https://badgen.net/github/stars/celtian/ngx-cut)
-![forks](https://badgen.net/github/forks/celtian/ngx-cut)
+[![stars](https://badgen.net/github/stars/celtian/ngx-cut)](https://github.com/celtian/ngx-cut/actions)
+[![forks](https://badgen.net/github/forks/celtian/ngx-cut)](https://github.com/celtian/ngx-cut/actions)
 [![HitCount](http://hits.dwyl.com/celtian/ngx-cut.svg)](http://hits.dwyl.com/celtian/ngx-cut)
 
 > Angular directive for cutting texts with responsive options

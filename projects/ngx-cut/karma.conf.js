@@ -17,7 +17,7 @@ module.exports = function (config) {
     },
     coverageReporter: {
       dir: require('path').join(__dirname, '../../coverage/ngx-cut'),
-      reports: ['html', 'lcovonly', 'text-summary'],
+      reporters: [{ type: 'html' }, { type: 'text-summary' }, { type: 'lcovonly' }],
       fixWebpackSourcePaths: true
     },
     reporters: ['progress', 'kjhtml'],

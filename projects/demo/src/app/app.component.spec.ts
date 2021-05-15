@@ -74,12 +74,6 @@ describe('AppComponent', () => {
   });
 
   describe('ngOnInit', () => {
-    it('should trigger on init', () => {
-      const spyNgOnInit = spyOn(component, 'ngOnInit').and.callThrough();
-      fixture.detectChanges();
-      expect(spyNgOnInit).toHaveBeenCalled();
-    });
-
     it('should return windowSize text for 150px', () => {
       spyOnProperty(window, 'innerWidth').and.returnValue(150);
       fixture.detectChanges();

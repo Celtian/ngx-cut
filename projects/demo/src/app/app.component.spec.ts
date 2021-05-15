@@ -75,7 +75,7 @@ describe('AppComponent', () => {
 
   describe('ngOnInit', () => {
     it('should trigger on init', () => {
-      const spyNgOnInit = spyOn(component, 'ngOnInit');
+      const spyNgOnInit = spyOn(component, 'ngOnInit').and.callThrough();
       fixture.detectChanges();
       expect(spyNgOnInit).toHaveBeenCalled();
     });

@@ -14,7 +14,7 @@
 
 > Angular directive for cutting texts with responsive options
 
-> ✓ _Angular 11, Ivy and SSR compatible_
+> ✓ _Angular 12, Ivy and SSR compatible_
 
 Here's the [demo](http://celtian.github.io/ngx-cut/) or [stackblitz live preview](https://stackblitz.com/edit/ngx-cut)
 

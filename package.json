@@ -26,7 +26,6 @@
     "postinstall": "yarn create:version && husky install",
     "syncprojects": "ts-node --project scripts/tsconfig.ts-node.json scripts/sync-projects",
     "version": "yarn syncprojects && git add projects/ngx-cut/ && auto-changelog -p && git add CHANGELOG.md",
-    "changelog": "changelog -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md'",
     "postversion": "git push && git push --follow-tags",
     "publish:beta": "yarn && yarn build && npm publish --folder dist --tag beta",
     "release:beta": "npm version prerelease -m \"chore(update): prelease %s β\"",

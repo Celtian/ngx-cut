@@ -32,4 +32,12 @@ export const BOOTSTRAP_BREAKPOINTS: NgxCutBreakpoints = {
   xl: 1200
 };
 
+// https://tailwindcss.com/docs/responsive-design
+export const TAILWIND_BREAKPOINTS: NgxCutBreakpoints = {
+  sm: 640,
+  md: 768,
+  lg: 1024,
+  xl: 1280
+};
+
 export const DEFAULT_BREAKPOINTS = BOOTSTRAP_BREAKPOINTS;

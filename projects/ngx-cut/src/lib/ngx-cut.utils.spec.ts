@@ -1,3 +1,4 @@
+import { TAILWIND_BREAKPOINTS } from '.';
 import {
   NgxCutBreakpoints,
   NgxCutResponsiveSizes,
@@ -187,12 +188,13 @@ describe('NgxCutUtils', () => {
         lg: { xs: 5, sm: 5, md: 6, lg: 6, xl: 7 },
         xl: { xs: 6, sm: 6, md: 7, lg: 7, xl: 8 }
       })).toEqual(
-      { xs: { xs: 2, sm: 2, md: 3, lg: 3, xl: 4 },
-        sm: { xs: 3, sm: 3, md: 4, lg: 4, xl: 5 },
-        md: { xs: 4, sm: 4, md: 5, lg: 5, xl: 6 },
-        lg: { xs: 5, sm: 5, md: 6, lg: 6, xl: 7 },
-        xl: { xs: 6, sm: 6, md: 7, lg: 7, xl: 8 }
-      });
+        {
+          xs: { xs: 2, sm: 2, md: 3, lg: 3, xl: 4 },
+          sm: { xs: 3, sm: 3, md: 4, lg: 4, xl: 5 },
+          md: { xs: 4, sm: 4, md: 5, lg: 5, xl: 6 },
+          lg: { xs: 5, sm: 5, md: 6, lg: 6, xl: 7 },
+          xl: { xs: 6, sm: 6, md: 7, lg: 7, xl: 8 }
+        });
 
       expect(normalizeAllResponsiveSizes({
         xs: 2,
@@ -201,12 +203,13 @@ describe('NgxCutUtils', () => {
         lg: { xs: 5, sm: 5, md: 6, lg: 6, xl: 7 },
         xl: { xs: 6, sm: 6, md: 7, lg: 7, xl: 8 }
       })).toEqual(
-      { xs: { xs: 2, sm: 2, md: 2, lg: 2, xl: 2 },
-        sm: { xs: 3, sm: 3, md: 3, lg: 3, xl: 3 },
-        md: { xs: 4, sm: 4, md: 5, lg: 5, xl: 6 },
-        lg: { xs: 5, sm: 5, md: 6, lg: 6, xl: 7 },
-        xl: { xs: 6, sm: 6, md: 7, lg: 7, xl: 8 }
-      });
+        {
+          xs: { xs: 2, sm: 2, md: 2, lg: 2, xl: 2 },
+          sm: { xs: 3, sm: 3, md: 3, lg: 3, xl: 3 },
+          md: { xs: 4, sm: 4, md: 5, lg: 5, xl: 6 },
+          lg: { xs: 5, sm: 5, md: 6, lg: 6, xl: 7 },
+          xl: { xs: 6, sm: 6, md: 7, lg: 7, xl: 8 }
+        });
     });
 
     it('should normalize null or undefined to undefined', () => {
@@ -262,6 +265,7 @@ describe('NgxCutUtils', () => {
       expect(selectBreakpoints('BOOTSTRAP')).toEqual(BOOTSTRAP_BREAKPOINTS);
       expect(selectBreakpoints('CDK')).toEqual(CDK_BREAKPOINTS);
       expect(selectBreakpoints('FX_LAYOUT')).toEqual(FX_LAYOUT_BREAKPOINTS);
+      expect(selectBreakpoints('TAILWIND')).toEqual(TAILWIND_BREAKPOINTS);
     });
 
     it('should select custom breakpoints', () => {

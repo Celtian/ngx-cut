@@ -16,7 +16,7 @@
 
 > ✓ _Angular 12, Ivy and SSR compatible_
 
-Here's the [demo](http://celtian.github.io/ngx-cut/) or [stackblitz live preview](https://stackblitz.com/edit/ngx-cut)
+Here's the [demo](http://celtian.github.io/ngx-cut/) or [stackblitz live preview](https://stackblitz.com/edit/ngx-cut) or [codesandbox live preview](https://codesandbox.io/s/ngx-cut-j2ryu)
 
 - Lightweight
 - No dependencies!

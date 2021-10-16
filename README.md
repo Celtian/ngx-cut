@@ -23,7 +23,7 @@ Here's the [demo](http://celtian.github.io/ngx-cut/) or [stackblitz live preview
 - Directive way
 - Highly customizable [options](#options)...
 - Responsivity supported
-- Predefined breakpoints (Bootrstrap, CDK, FxLayout)
+- Predefined breakpoints (Bootrstrap, CDK, FxLayout, Tailwind)
 
 ## Install
 

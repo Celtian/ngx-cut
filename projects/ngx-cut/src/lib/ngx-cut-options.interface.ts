@@ -56,7 +56,7 @@ export interface NgxCutOptionsResponsiveSizes {
   xl: NgxCutResponsiveSizeOrNumber;
 }
 
-export type NgxCutPredefinedBreakpoints = 'BOOTSTRAP' | 'FX_LAYOUT' | 'CDK';
+export type NgxCutPredefinedBreakpoints = 'BOOTSTRAP' | 'FX_LAYOUT' | 'CDK' | 'TAILWIND';
 
 export type NgxCutBreakpointsOrPredefinedBreakpoints = NgxCutBreakpoints | NgxCutPredefinedBreakpoints;
 

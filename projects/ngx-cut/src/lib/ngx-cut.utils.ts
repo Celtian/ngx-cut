@@ -15,7 +15,8 @@ import {
   BOOTSTRAP_BREAKPOINTS,
   CDK_BREAKPOINTS,
   DEFAULT_BREAKPOINTS,
-  FX_LAYOUT_BREAKPOINTS
+  FX_LAYOUT_BREAKPOINTS,
+  TAILWIND_BREAKPOINTS
 } from './ngx-cut.constants';
 
 export const isIntValue = (value: any): boolean => {
@@ -102,6 +103,8 @@ export const selectBreakpoints = (breakpoints: NgxCutBreakpointsOrPredefinedBrea
     switch (bp) {
       case 'BOOTSTRAP':
         return BOOTSTRAP_BREAKPOINTS;
+      case 'TAILWIND':
+        return TAILWIND_BREAKPOINTS;
       case 'CDK':
         return CDK_BREAKPOINTS;
       case 'FX_LAYOUT':

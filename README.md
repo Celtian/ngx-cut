@@ -139,7 +139,7 @@ _None_
 
 ## License
 
-Copyright &copy; 2020 - 2021 [Dominik Hladik](https://github.com/Celtian)
+Copyright &copy; 2020 - 2022 [Dominik Hladik](https://github.com/Celtian)
 
 All contents are licensed under the [MIT license].
 

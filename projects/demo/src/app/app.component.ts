@@ -43,7 +43,7 @@ export class AppComponent implements OnInit {
       {
         title: 'As innerHTML',
         code: '<p ngxCut [innerHTML]="text"></p>',
-        description: 'As alternative you can use innerHTML.'
+        description: 'Default number of lines (1) are truncated.'
       }
     ],
     multiline: [
@@ -68,8 +68,7 @@ export class AppComponent implements OnInit {
     change: [
       {
         title: 'Truncate can change event can be used',
-        code:
-          '<p ngxCut [size]="2" (truncateChange)="truncateEvent = $event">{{ text }}</p>\n<pre>{{ truncateEvent | json }}</pre>',
+        code: '<p ngxCut [size]="2" (truncateChange)="truncateEvent = $event">{{ text }}</p>\n<pre>{{ truncateEvent | json }}</pre>',
         description: 'When text is truncated event is emmited.'
       }
     ],

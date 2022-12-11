@@ -183,7 +183,8 @@
   },
   "cli": {
     "analytics": false,
-    "defaultCollection": "@angular-eslint/schematics"
-  },
-  "defaultProject": "ngx-cut"
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
+  }
 }

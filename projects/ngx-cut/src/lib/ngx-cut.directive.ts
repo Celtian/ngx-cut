@@ -11,6 +11,7 @@ import { coerceNgxCutSizes } from './ngx-cut.utils';
   selector: '[ngxCut]'
 })
 export class NgxCutDirective implements OnInit {
+  // eslint-disable-next-line @angular-eslint/no-input-rename
   @Input('size') public set setLines(value: NgxCutSizes) {
     const v = coerceNgxCutSizes(value);
     this.size = v ? v : this.options.size;
@@ -19,6 +20,7 @@ export class NgxCutDirective implements OnInit {
   }
   public size: NgxCutSizes = this.options.size;
 
+  // eslint-disable-next-line @angular-eslint/no-input-rename
   @Input('truncateDisabled') public set setTruncate(value: boolean) {
     this.truncateDisabled = value;
     this.truncate();

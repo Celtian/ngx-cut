@@ -7,6 +7,7 @@
 [![Package License](https://img.shields.io/npm/l/ngx-cut.svg)](https://www.npmjs.com/ngx-cut)
 [![NPM Downloads](https://img.shields.io/npm/dm/ngx-cut.svg)](https://www.npmjs.com/ngx-cut)
 [![Build & Publish](https://github.com/celtian/ngx-cut/workflows/Build%20&%20Publish/badge.svg)](https://github.com/celtian/ngx-cut/actions)
+[![Snyk](https://snyk.io/advisor/npm-package/ngx-cut/badge.svg)](https://snyk.io/advisor/npm-package/ngx-cut)
 [![codecov](https://codecov.io/gh/Celtian/ngx-cut/branch/master/graph/badge.svg?token=1IRUKIKM0D)](https://codecov.io/gh/celtian/ngx-cut/)
 [![stars](https://badgen.net/github/stars/celtian/ngx-cut)](https://github.com/celtian/ngx-cut/)
 [![forks](https://badgen.net/github/forks/celtian/ngx-cut)](https://github.com/celtian/ngx-cut/)
@@ -14,7 +15,7 @@
 
 > Angular directive for cutting texts with responsive options
 
-> ✓ _Angular 15, Ivy and SSR compatible_
+> ✓ _Angular 16, Ivy and SSR compatible_
 
 Here's the [demo](http://celtian.github.io/ngx-cut/) or [stackblitz live preview](https://stackblitz.com/edit/ngx-cut) or [codesandbox live preview](https://codesandbox.io/s/ngx-cut-j2ryu)
 

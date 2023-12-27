@@ -1,5 +1,6 @@
+import { JsonPipe } from '@angular/common';
 import { Component, HostListener, OnInit } from '@angular/core';
-import { NgxCutEventTruncate } from 'projects/ngx-cut/src/lib';
+import { NgxCutEventTruncate, NgxCutModule } from 'projects/ngx-cut/src/lib';
 import { VERSION } from '../environments/version';
 
 const TEXT =
@@ -23,7 +24,9 @@ interface ExampleSection {
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrl: './app.component.scss',
+  standalone: true,
+  imports: [NgxCutModule, JsonPipe]
 })
 export class AppComponent implements OnInit {
   public title = 'ngx-cut';

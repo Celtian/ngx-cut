@@ -5,12 +5,17 @@ import { NgxCutService } from './ngx-cut.service';
 
 describe('NgxCutService', () => {
   let service: NgxCutService;
-  let renderer: jasmine.SpyObj<Renderer2>;
-  let element: jasmine.SpyObj<ElementRef>;
+  let renderer: jest.Mocked<Renderer2>;
+  let element: jest.Mocked<ElementRef>;
 
   beforeEach(() => {
-    element = jasmine.createSpyObj('ElementRef', ['nativeElement']);
-    renderer = jasmine.createSpyObj('Renderer2', ['setStyle', 'removeStyle', 'removeClass', 'addClass']);
+    element = { nativeElement: jest.fn() } as unknown as jest.Mocked<ElementRef>;
+    renderer = {
+      setStyle: jest.fn(),
+      removeStyle: jest.fn(),
+      removeClass: jest.fn(),
+      addClass: jest.fn()
+    } as unknown as jest.Mocked<Renderer2>;
 
     TestBed.configureTestingModule({
       imports: [NgxCutModule],
@@ -36,7 +41,7 @@ describe('NgxCutService', () => {
     expect(renderer.setStyle).toHaveBeenCalled();
   });
 
-  it('should setStyle with 2 line', () => {
+  it('should setStyle with 2 lines', () => {
     service.setStyle(element, renderer, 2);
     expect(renderer.setStyle).toHaveBeenCalled();
   });

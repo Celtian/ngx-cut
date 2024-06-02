@@ -27,14 +27,16 @@ describe('AppComponent', () => {
 
   describe('onResize', () => {
     it('should trigger onResize method when window is resized', () => {
-      const spyOnResize = spyOn(component, 'onResize');
+      const spyOnResize = jest.spyOn(component, 'onResize');
       window.dispatchEvent(new Event('resize'));
       expect(spyOnResize).toHaveBeenCalled();
     });
 
     it('should return windowSize text for 150px', () => {
       window.dispatchEvent(new Event('resize'));
-      spyOnProperty(window, 'innerWidth').and.returnValue(150);
+      Object.defineProperty(window, 'innerWidth', {
+        get: jest.fn().mockReturnValue(150)
+      });
       fixture.detectChanges();
       expect(component.windowSize).toBe(
         'Window size is <strong>150px</strong>. Activated breakpoint is <strong>xs</strong>.'
@@ -43,7 +45,9 @@ describe('AppComponent', () => {
 
     it('should return windowSize text for 350px', () => {
       window.dispatchEvent(new Event('resize'));
-      spyOnProperty(window, 'innerWidth').and.returnValue(350);
+      Object.defineProperty(window, 'innerWidth', {
+        get: jest.fn().mockReturnValue(350)
+      });
       fixture.detectChanges();
       expect(component.windowSize).toBe(
         'Window size is <strong>350px</strong>. Activated breakpoint is <strong>sm</strong>.'
@@ -52,7 +56,9 @@ describe('AppComponent', () => {
 
     it('should return windowSize text for 450px', () => {
       window.dispatchEvent(new Event('resize'));
-      spyOnProperty(window, 'innerWidth').and.returnValue(450);
+      Object.defineProperty(window, 'innerWidth', {
+        get: jest.fn().mockReturnValue(450)
+      });
       fixture.detectChanges();
       expect(component.windowSize).toBe(
         'Window size is <strong>450px</strong>. Activated breakpoint is <strong>md</strong>.'
@@ -61,7 +67,9 @@ describe('AppComponent', () => {
 
     it('should return windowSize text for 550px', () => {
       window.dispatchEvent(new Event('resize'));
-      spyOnProperty(window, 'innerWidth').and.returnValue(550);
+      Object.defineProperty(window, 'innerWidth', {
+        get: jest.fn().mockReturnValue(550)
+      });
       fixture.detectChanges();
       expect(component.windowSize).toBe(
         'Window size is <strong>550px</strong>. Activated breakpoint is <strong>lg</strong>.'
@@ -70,7 +78,9 @@ describe('AppComponent', () => {
 
     it('should return windowSize text for 650px', () => {
       window.dispatchEvent(new Event('resize'));
-      spyOnProperty(window, 'innerWidth').and.returnValue(650);
+      Object.defineProperty(window, 'innerWidth', {
+        get: jest.fn().mockReturnValue(650)
+      });
       fixture.detectChanges();
       expect(component.windowSize).toBe(
         'Window size is <strong>650px</strong>. Activated breakpoint is <strong>xl</strong>.'
@@ -80,7 +90,9 @@ describe('AppComponent', () => {
 
   describe('ngOnInit', () => {
     it('should return windowSize text for 150px', () => {
-      spyOnProperty(window, 'innerWidth').and.returnValue(150);
+      Object.defineProperty(window, 'innerWidth', {
+        get: jest.fn().mockReturnValue(150)
+      });
       fixture.detectChanges();
       expect(component.windowSize).toBe(
         'Window size is <strong>150px</strong>. Activated breakpoint is <strong>xs</strong>.'
@@ -88,7 +100,9 @@ describe('AppComponent', () => {
     });
 
     it('should return windowSize text for 350px', () => {
-      spyOnProperty(window, 'innerWidth').and.returnValue(350);
+      Object.defineProperty(window, 'innerWidth', {
+        get: jest.fn().mockReturnValue(350)
+      });
       fixture.detectChanges();
       expect(component.windowSize).toBe(
         'Window size is <strong>350px</strong>. Activated breakpoint is <strong>sm</strong>.'
@@ -96,7 +110,9 @@ describe('AppComponent', () => {
     });
 
     it('should return windowSize text for 450px', () => {
-      spyOnProperty(window, 'innerWidth').and.returnValue(450);
+      Object.defineProperty(window, 'innerWidth', {
+        get: jest.fn().mockReturnValue(450)
+      });
       fixture.detectChanges();
       expect(component.windowSize).toBe(
         'Window size is <strong>450px</strong>. Activated breakpoint is <strong>md</strong>.'
@@ -104,7 +120,9 @@ describe('AppComponent', () => {
     });
 
     it('should return windowSize text for 550px', () => {
-      spyOnProperty(window, 'innerWidth').and.returnValue(550);
+      Object.defineProperty(window, 'innerWidth', {
+        get: jest.fn().mockReturnValue(550)
+      });
       fixture.detectChanges();
       expect(component.windowSize).toBe(
         'Window size is <strong>550px</strong>. Activated breakpoint is <strong>lg</strong>.'
@@ -112,7 +130,9 @@ describe('AppComponent', () => {
     });
 
     it('should return windowSize text for 650px', () => {
-      spyOnProperty(window, 'innerWidth').and.returnValue(650);
+      Object.defineProperty(window, 'innerWidth', {
+        get: jest.fn().mockReturnValue(650)
+      });
       fixture.detectChanges();
       expect(component.windowSize).toBe(
         'Window size is <strong>650px</strong>. Activated breakpoint is <strong>xl</strong>.'

@@ -1,6 +1,6 @@
 import { JsonPipe } from '@angular/common';
 import { Component, HostListener, OnInit } from '@angular/core';
-import { NgxCutEventTruncate, NgxCutModule } from 'projects/ngx-cut/src/lib';
+import { NgxCutEventTruncate, NgxCutModule } from 'projects/ngx-cut/src/public-api';
 import { VERSION } from '../environments/version';
 
 const TEXT =

@@ -1,9 +1,10 @@
-import { ApplicationConfig, importProvidersFrom } from '@angular/core';
+import { ApplicationConfig, importProvidersFrom, provideExperimentalZonelessChangeDetection } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxCutModule } from 'projects/ngx-cut/src/public-api';
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideExperimentalZonelessChangeDetection(),
     importProvidersFrom(
       BrowserModule,
       NgxCutModule.forRoot({

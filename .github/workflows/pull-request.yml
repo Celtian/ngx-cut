@@ -25,7 +25,7 @@ jobs:
       - name: 🛠️ Sync versions
         run: yarn script:sync-projects
 
-       - name: 🧪 Run tests
+      - name: 🧪 Run tests
         run: npx jest --ci --json --coverage --testLocationInResults --outputFile=coverage/report.json
 
       - name: 🧪 Create coverage report markdown

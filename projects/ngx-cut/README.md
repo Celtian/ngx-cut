@@ -15,7 +15,7 @@
 
 > Angular directive for cutting texts with responsive options
 
-> ✓ _Angular 17 compatible_
+> ✓ _Angular 18 compatible_
 
 Here's the [demo](http://celtian.github.io/ngx-cut/) or [stackblitz live preview](https://stackblitz.com/edit/ngx-cut) or [codesandbox live preview](https://codesandbox.io/s/ngx-cut-j2ryu)
 
@@ -26,7 +26,7 @@ Here's the [demo](http://celtian.github.io/ngx-cut/) or [stackblitz live preview
 - Responsivity supported
 - Predefined breakpoints (Bootrstrap, CDK, FxLayout, Tailwind)
 
-## Install
+## 🛠️ Install
 
 1. Use yarn (or npm) to install the package
 
@@ -116,15 +116,7 @@ yarn add ngx-cut
   })
 ```
 
-## Compatibility
-
-| Angular   | ngx-cut | Install              |
-| --------- | ------- | -------------------- |
-| >= 12     | 2.x     | `yarn add ngx-cut`   |
-| >= 5 < 13 | 1.x     | `yarn add ngx-cut@1` |
-| >= 5 < 13 | 0.x     | `yarn add ngx-cut@0` |
-
-## Quick start
+## 🚀 Quick start
 
 ### Example code
 
@@ -138,7 +130,7 @@ yarn add ngx-cut
   some long...
 ```
 
-## Options
+## 🛠️ Options
 
 ### Root options
 
@@ -156,11 +148,19 @@ yarn add ngx-cut
 | **[truncateDisabled]** | boolean      | false                         | Whether truncation is active or not          |
 | **(truncateChange)**   | () => object | none                          | Event called when truncation is changed.     |
 
-## Dependencies
+## 🔧 Compatibility
+
+| Angular   | ngx-cut | Install              |
+| --------- | ------- | -------------------- |
+| >= 12     | 2.x     | `yarn add ngx-cut`   |
+| >= 5 < 13 | 1.x     | `yarn add ngx-cut@1` |
+| >= 5 < 13 | 0.x     | `yarn add ngx-cut@0` |
+
+## 📦 Dependencies
 
 _None_
 
-## License
+## 🪪 License
 
 Copyright &copy; 2020 - 2024 [Dominik Hladik](https://github.com/Celtian)
 

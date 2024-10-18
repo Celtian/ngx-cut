@@ -27,7 +27,8 @@ const config: Config = {
       }
     ]
   },
-  transformIgnorePatterns: ['node_modules/(?!.*\\.mjs$)']
+  transformIgnorePatterns: ['node_modules/(?!.*\\.mjs$)'],
+  testPathIgnorePatterns: ['<rootDir>/dist/']
 };
 
 export default config;

@@ -17,7 +17,8 @@ describe('NgxCutDirective', () => {
     let fixture: ComponentFixture<TestDirectiveComponent>;
 
     @Component({
-      template: '<p ngxCut [size]="2" [truncateDisabled]="false" (truncateChange)="onTruncate($event)">{{ text }}</p>'
+      template: '<p ngxCut [size]="2" [truncateDisabled]="false" (truncateChange)="onTruncate($event)">{{ text }}</p>',
+      standalone: false
     })
     class TestDirectiveComponent {
       public text = TEXT;
@@ -86,7 +87,8 @@ describe('NgxCutDirective', () => {
     let fixture: ComponentFixture<TestEnumDirectiveComponent>;
 
     @Component({
-      template: '<p ngxCut size="xs" [truncateDisabled]="false">{{ text }}</p>'
+      template: '<p ngxCut size="xs" [truncateDisabled]="false">{{ text }}</p>',
+      standalone: false
     })
     class TestEnumDirectiveComponent {
       public text = TEXT;

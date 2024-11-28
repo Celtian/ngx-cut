@@ -5,7 +5,9 @@ import { NgxCutOptionsService } from './ngx-cut-options.service';
 import { NgxCutDirective } from './ngx-cut.directive';
 import { NgxCutService } from './ngx-cut.service';
 
-export let FOR_ROOT_OPTIONS_TOKEN = new InjectionToken<NgxCutOptions>('forRoot() NgxCutOptionsService configuration.');
+export const FOR_ROOT_OPTIONS_TOKEN = new InjectionToken<NgxCutOptions>(
+  'forRoot() NgxCutOptionsService configuration.'
+);
 
 @NgModule({
   declarations: [NgxCutDirective],

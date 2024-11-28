@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   NgxCutBreakpoints,
   NgxCutBreakpointsOrPredefinedBreakpoints,
@@ -177,7 +178,7 @@ export const extractStyleSheetData = (
  */
 export const createCss = (key: NgxCutSizesOnlyResponsive, data: NgxCutStylesBreakpointData): string => {
   const sheet: string[] = [];
-  for (const [k, v] of Object.entries(data)) {
+  for (const [, v] of Object.entries(data)) {
     if (v.breakpoint) {
       sheet.push(`
       @media screen and (min-width:${v.breakpoint}px) {

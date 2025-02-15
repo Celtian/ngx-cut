@@ -18,7 +18,7 @@ describe('NgxCutDirective', () => {
 
     @Component({
       template: '<p ngxCut [size]="2" [truncateDisabled]="false" (truncateChange)="onTruncate($event)">{{ text }}</p>',
-      standalone: false
+      imports: [NgxCutDirective]
     })
     class TestDirectiveComponent {
       public text = TEXT;
@@ -30,22 +30,13 @@ describe('NgxCutDirective', () => {
     }
 
     beforeEach(() => {
-      options = {
-        size: jest.fn()
-      } as unknown as jest.Mocked<NgxCutOptionsService>;
-      element = {
-        nativeElement: jest.fn()
-      } as unknown as jest.Mocked<ElementRef>;
-      service = {
-        setStyle: jest.fn(),
-        setClass: jest.fn()
-      } as unknown as jest.Mocked<NgxCutService>;
-      renderer = {
-        setStyle: jest.fn()
-      } as unknown as jest.Mocked<Renderer2>;
+      options = { size: jest.fn() } as unknown as jest.Mocked<NgxCutOptionsService>;
+      element = { nativeElement: jest.fn() } as unknown as jest.Mocked<ElementRef>;
+      service = { setStyle: jest.fn(), setClass: jest.fn() } as unknown as jest.Mocked<NgxCutService>;
+      renderer = { setStyle: jest.fn() } as unknown as jest.Mocked<Renderer2>;
 
       fixture = TestBed.configureTestingModule({
-        declarations: [TestDirectiveComponent, NgxCutDirective],
+        imports: [TestDirectiveComponent],
         schemas: [NO_ERRORS_SCHEMA],
         providers: [
           { provide: Renderer2, useValue: renderer },
@@ -88,7 +79,7 @@ describe('NgxCutDirective', () => {
 
     @Component({
       template: '<p ngxCut size="xs" [truncateDisabled]="false">{{ text }}</p>',
-      standalone: false
+      imports: [NgxCutDirective]
     })
     class TestEnumDirectiveComponent {
       public text = TEXT;
@@ -96,22 +87,13 @@ describe('NgxCutDirective', () => {
     }
 
     beforeEach(() => {
-      options = {
-        size: jest.fn()
-      } as unknown as jest.Mocked<NgxCutOptionsService>;
-      element = {
-        nativeElement: jest.fn()
-      } as unknown as jest.Mocked<ElementRef>;
-      service = {
-        setStyle: jest.fn(),
-        setClass: jest.fn()
-      } as unknown as jest.Mocked<NgxCutService>;
-      renderer = {
-        setStyle: jest.fn()
-      } as unknown as jest.Mocked<Renderer2>;
+      options = { size: jest.fn() } as unknown as jest.Mocked<NgxCutOptionsService>;
+      element = { nativeElement: jest.fn() } as unknown as jest.Mocked<ElementRef>;
+      service = { setStyle: jest.fn(), setClass: jest.fn() } as unknown as jest.Mocked<NgxCutService>;
+      renderer = { setStyle: jest.fn() } as unknown as jest.Mocked<Renderer2>;
 
       fixture = TestBed.configureTestingModule({
-        declarations: [TestEnumDirectiveComponent, NgxCutDirective],
+        imports: [TestEnumDirectiveComponent],
         schemas: [NO_ERRORS_SCHEMA],
         providers: [
           { provide: Renderer2, useValue: renderer },

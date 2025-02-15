@@ -24,8 +24,7 @@ interface ExampleSection {
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
-  standalone: true,
+  styleUrl: './app.component.css',
   imports: [NgxCutModule, JsonPipe]
 })
 export class AppComponent implements OnInit {

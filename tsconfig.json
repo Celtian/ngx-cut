@@ -13,8 +13,9 @@
     "target": "ES2022",
     "lib": ["ES2022", "dom"],
     "paths": {
-      "ngx-cut": ["dist/ngx-cut"],
-      "ngx-cut/*": ["dist/ngx-cut/*"]
+      "ngx-cut": [
+        "./projects/ngx-cut/src/public-api"
+      ]
     },
     "resolveJsonModule": true,
     "useDefineForClassFields": false

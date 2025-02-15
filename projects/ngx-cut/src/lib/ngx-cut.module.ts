@@ -9,25 +9,14 @@ export const FOR_ROOT_OPTIONS_TOKEN = new InjectionToken<NgxCutOptions>(
   'forRoot() NgxCutOptionsService configuration.'
 );
 
-@NgModule({
-  declarations: [NgxCutDirective],
-  exports: [NgxCutDirective],
-  providers: [NgxCutService, NgxCutOptionsService]
-})
+@NgModule({ imports: [NgxCutDirective], exports: [NgxCutDirective], providers: [NgxCutService, NgxCutOptionsService] })
 export class NgxCutModule {
   public static forRoot(options?: NgxCutOptions): ModuleWithProviders<NgxCutModule> {
     return {
       ngModule: NgxCutModule,
       providers: [
-        {
-          provide: FOR_ROOT_OPTIONS_TOKEN,
-          useValue: options
-        },
-        {
-          provide: NgxCutOptionsService,
-          useFactory: ngxCutOptionsFactory,
-          deps: [FOR_ROOT_OPTIONS_TOKEN]
-        }
+        { provide: FOR_ROOT_OPTIONS_TOKEN, useValue: options },
+        { provide: NgxCutOptionsService, useFactory: ngxCutOptionsFactory, deps: [FOR_ROOT_OPTIONS_TOKEN] }
       ]
     };
   }

@@ -22,6 +22,9 @@ jobs:
       - name: 🧹 Lint
         run: yarn lint
 
+      - name: ♻️ Check circular dependencies
+        run: yarn check-circular-dependencies
+
       - name: 🛠️ Sync versions
         run: yarn script:sync-projects
 

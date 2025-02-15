@@ -7,10 +7,7 @@ import { coerceNgxCutSizes } from './ngx-cut.utils';
 /**
  * @returns multiline truncate
  */
-@Directive({
-  selector: '[ngxCut]',
-  standalone: false
-})
+@Directive({ selector: '[ngxCut]' })
 export class NgxCutDirective implements OnInit {
   // eslint-disable-next-line @angular-eslint/no-input-rename
   @Input('size') public set setLines(value: NgxCutSizes) {

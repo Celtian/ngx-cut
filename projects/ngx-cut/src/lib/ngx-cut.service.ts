@@ -1,5 +1,4 @@
-import { DOCUMENT } from '@angular/common';
-import { ElementRef, Inject, Injectable, Renderer2, RendererStyleFlags2 } from '@angular/core';
+import { ElementRef, Inject, Injectable, Renderer2, RendererStyleFlags2, DOCUMENT } from '@angular/core';
 import { NgxCutSizesOnlyResponsive } from './ngx-cut-options.interface';
 import { NgxCutOptionsService } from './ngx-cut-options.service';
 import { createCss, extractStyleSheetData } from './ngx-cut.utils';

@@ -15,7 +15,7 @@
 
 > Angular directive for cutting texts with responsive options
 
-> ✓ _Angular 19 compatible_
+> ✓ _Angular 20 compatible_
 
 Here's the [demo](http://celtian.github.io/ngx-cut/) or [stackblitz live preview](https://stackblitz.com/edit/ngx-cut) or [codesandbox live preview](https://codesandbox.io/s/ngx-cut-j2ryu)
 

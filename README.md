@@ -152,7 +152,8 @@ yarn add ngx-cut
 
 | Angular   | ngx-cut | Install              |
 | --------- | ------- | -------------------- |
-| >= 12     | 2.x     | `yarn add ngx-cut`   |
+| >= 20     | 3.x     | `yarn add ngx-cut`   |
+| >= 12     | 2.x     | `yarn add ngx-cut@2` |
 | >= 5 < 13 | 1.x     | `yarn add ngx-cut@1` |
 | >= 5 < 13 | 0.x     | `yarn add ngx-cut@0` |
 
